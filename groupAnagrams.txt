@@ -1,0 +1,41 @@
+GETTING A UNHASHABLE TYPE LIST ERROR, so this solution doesnt work yet
+
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # Approach 1
+        # for loop: O(n)
+        # sorted: O(n log n)
+
+        # since the sorted would be within the for loop, O(n^2) (log n)
+
+        # Approach 2
+        # for loop: O(n)
+            
+            # for c in element:
+
+        # I think we need to use sorted(s)
+        # we would add the index within the array as needed
+
+        # [sorted string, index]
+        hashset = {}
+
+        for i in range(len(strs)):
+            string = strs[i]
+            string = sorted(string)
+            # hashset.get(string)
+            if hashset.get(string) is None:
+                hashset[string] = []
+            # value.append(i)
+            hashset[string] = value
+            
+            
+        result = []
+        for c in hashset:
+            print(c)
+            # listOfVals = hashset(c)
+            # temp = []
+            # for vals in listOfVals:
+            #     temp.append(strs[vals])
+            # result.append(temp)
+                
+
+        return result

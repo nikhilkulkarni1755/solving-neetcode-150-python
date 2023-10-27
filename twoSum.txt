@@ -1,0 +1,19 @@
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashset = {}
+
+        for i in range(len(nums)):
+            difference = target - nums[i]
+            # print(difference)
+            # print(nums[i])
+            if difference in hashset:
+                # print('inside fxn')
+                result = [hashset[difference], i]
+                return result
+            # print('adding to the dictionary here')
+            hashset[nums[i]] = i
+            # print(hashset)
+
+        # for i in nums:
+            
+        
+        # return 

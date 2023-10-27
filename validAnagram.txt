@@ -1,0 +1,24 @@
+def isAnagram(self, s: str, t: str) -> bool:
+        
+        # Approach 1: Sort and then check if they are equal
+
+        # O(n log n) + O(n log n)
+
+        # return sorted(s) == sorted(t)
+
+        # Approach 2: Two Hashmaps with number of occurrences, then check if the two hashmaps are equal
+
+        if len(s) != len(t):
+            return False
+
+        h1, h2 = {}, {}
+
+        for c in s:
+            h1[c] = h1.get(c, 0) + 1
+            
+        for c in t:
+            h2[c] = h2.get(c, 0) + 1
+
+        # now we compare both the hashmaps
+
+        return h1 == h2
