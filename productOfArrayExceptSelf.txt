@@ -1,0 +1,14 @@
+
+
+This solves using division
+        
+        product = 1
+        for i in nums:
+            product *= i
+        result = []
+        # btw deal with dividing with zero
+        # but this solves for division, now we gotta use multiplication
+        for j in nums:
+            result.append(int(product/j))
+        print('Done')
+        return result

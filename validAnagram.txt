@@ -1,3 +1,30 @@
+11/23/2023
+
+def isAnagram(self, s: str, t: str) -> bool:
+        hset1, hset2 = {}, {}
+
+        # for first string
+        for i in s:
+            if i in hset1:
+                temp = hset1[i]
+                temp += 1
+                hset1[i] = temp
+            else:
+                hset1[i] = 1
+
+        # for second string
+        for i in t:
+            if i in hset2:
+                temp = hset2[i]
+                temp += 1
+                hset2[i] = temp
+            else:
+                hset2[i] = 1
+
+        return hset1 == hset2
+
+------------------------------------------------------------------------
+
 def isAnagram(self, s: str, t: str) -> bool:
         
         # Approach 1: Sort and then check if they are equal

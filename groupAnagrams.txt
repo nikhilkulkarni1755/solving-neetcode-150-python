@@ -1,3 +1,55 @@
+# Found a solution atleast
+# Pretty sure this is not the optimal solution, but we atleast completed it in python3
+# T: 
+# for O(n) {
+#     sorted: O(n log n)
+# }
+# total O(n^2) log n
+# part 2
+# O(n^2)
+
+# total T: O(n^2 log n)
+
+# S: O(n)
+
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    
+    hashset = {}
+    
+    for i in range(len(strs)):
+        sortStr = ''.join(sorted(strs[i]))
+        # print(sortStr)
+        # if hashset.get(sortStr) is None:
+        if sortStr in hashset:
+            # print('appending to old newArr')
+            newArr = hashset[sortStr]
+            newArr.append(i)
+            hashset[sortStr] = newArr
+        else:
+            # print('creating new newArr')
+            newArr = [i]
+            hashset[sortStr] = newArr
+
+    # print(hashset)
+
+    result = []
+
+    for i in hashset.keys():
+        # print(i)
+        # print(hashset[i])
+        temp = []
+        for e in hashset[i]:
+            temp.append(strs[e])
+        result.append(temp)
+
+    return result
+
+#############################################
+
+OLD BELOW
+
+#############################################
+
 GETTING A UNHASHABLE TYPE LIST ERROR, so this solution doesnt work yet
 
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
