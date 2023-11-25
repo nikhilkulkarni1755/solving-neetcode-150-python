@@ -1,0 +1,24 @@
+11/24/2023
+
+def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        mapOccurrence = [[] for i in range(len(nums)+1)] # range(len(nums) + 1)
+        hset = {}
+
+        for i in nums:
+            if i in hset:
+                hset[i] += 1
+            else:
+                hset[i] = 1
+        for keys, values in hset.items():
+            mapOccurrence[values].append(keys)
+        
+        result = []
+        counter = 0
+
+        for i in range(len(mapOccurrence)-1, 0, -1): # changed before looking @ solution but after running once
+            for j in mapOccurrence[i]:
+                if counter < k:
+                    result.append(j)
+                    counter+=1
+
+        return result
