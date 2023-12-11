@@ -1,3 +1,65 @@
+12/10/2023
+
+-----------------------------------------------------------------------------------------------------
+class Solution:
+    """
+    @param: strs: a list of strings
+    @return: encodes a list of strings to a single string.
+    """
+
+    # O(n) time complexity
+    # O(n) spacecomplexity
+    def encode(self, strs):
+        # write your code here
+        result = []
+        for i in strs:
+            result.append('(')
+            result.append(i)
+            result.append(')')
+       
+        resultStr = ''.join(result)
+        # for j in result:
+        #     resultStr.append(j)
+        return resultStr
+
+
+    """
+    @param: str: A string
+    @return: decodes a single string to a list of strings
+    """
+    # O(n) time complexity
+    # O(n) space complexity
+
+    def decode(self, str):
+        # write your code here
+       
+        # first find the number of strings there are, then decode it\
+        # we can find the number of strings, or we can find the indexes where the strings start, then add accordingly
+        start = []
+        end = []
+        numStrs = 0
+        for i in range(len(str)):
+            if str[i] == '(':
+                numStrs+=1
+                start.append(i)
+            if str[i] == ')':
+                end.append(i)
+
+
+        if len(start) != len(end):
+            return None    
+           
+        result = []
+        # for i in start:
+        for i in range(len(start)):
+            result.append(str[start[i]+1:end[i]])
+        print(result)
+
+
+        return result
+-----------------------------------------------------------------------------------------------------
+some date before 12/10/2023
+
 class Solution:
     """
     @param: strs: a list of strings
