@@ -1,0 +1,30 @@
+12/12/2023
+------------------------------------------------------------------------
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    a = 0
+    b = len(nums) - 1
+    result = []
+
+    while a < b:
+        if nums[a] + nums[b] == target:
+            result.append(a+1)
+            result.append(b+1)
+            return result
+        if nums[a] + nums[b] < target:
+            a+=1
+        if nums[a] + nums[b] > target:
+            b-=1
+    # while b < len(nums):
+    #     if nums[a] + nums[b] == target:
+    #         result.append(a+1)
+    #         result.append(b+1)
+    #         return result
+    #     if nums[a] + nums[b] < target:
+    #         b+=1
+    #     if nums[a] + nums[b] > target:
+
+    #         a += 1
+    #         b += 1
+
+    return result
+------------------------------------------------------------------------

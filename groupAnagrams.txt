@@ -1,3 +1,44 @@
+12/12/2023 (done twice)
+------------------------------------------------------------------------
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    hset = defaultdict(list)
+
+    for i in strs:
+        mapping = [0] * 26
+        for c in i:
+            mapping[ord(c) - ord('a')] += 1
+        hset[tuple(mapping)].append(i)
+
+    result = []
+
+    for i in hset.values():
+        result.append(i)
+
+    return result
+
+------------------------------------------------------------------------
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    # if we sort O(n log n)
+
+    hset = defaultdict(list)
+
+    # O(N * String length)
+    # vs sorting O(N * NlogN)
+    # Space complexity O(n*n)
+    for i in strs:
+        mappings = [0] * 26
+        for c in i:
+            # print(ord(c) - ord('a'))
+            mappings[ord(c) - ord('a')] += 1
+        hset[tuple(mappings)].append(i)
+    result = []
+    for i in hset.values():
+        result.append(i)
+
+
+    return result
+------------------------------------------------------------------------
+
 11/24/2023
 I spent 10 mins because 
 res[tuple(count)].append(s) was tabbed, meaning it did that for all characters in s

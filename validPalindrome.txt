@@ -1,0 +1,26 @@
+12/12/2023
+------------------------------------------------------------------------
+def isPalindrome(self, s: str) -> bool:
+    # With assumption, this seems like an O(n) function so doesn't hurt time complexity
+    s = s.lower()
+
+    str = []
+    # Time complexity: O(n)
+    # Space complexity: O(n) str, a, b
+    for i in range(len(s)):
+        if ((ord(s[i]) >= ord('a') and ord(s[i]) <= ord("z")) or (ord(s[i]) >= ord('0') and ord(s[i]) <= ord("9"))):
+            str.append(s[i])
+    # print(s)
+    # print(str)
+
+    a = 0
+    b = len(str) - 1
+    O(n)
+    while a < b:
+        if str[a] != str[b]:
+            return False
+        a+=1
+        b-=1
+
+    return True
+------------------------------------------------------------------------
