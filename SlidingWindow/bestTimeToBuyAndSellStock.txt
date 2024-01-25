@@ -1,0 +1,29 @@
+Here the issue I found was finding the exit conditions for the loop. 
+
+I kept wondering when to use r += 1, l += 1
+
+---------------------------------------------------------------------------
+
+def maxProfit(self, prices: List[int]) -> int:
+    # O(n)
+    l = 0
+    r = 1
+    maxDiff = 0
+
+
+    # l doesn't matter here, but works out that r <= len(prices)-1
+    while l < r and r <= len(prices)-1:
+        # if prices[r] - prices[l] > maxDiff:
+        if prices[r] > prices[l]:
+            diff = prices[r] - prices[l]
+            maxDiff = max(diff, maxDiff)
+        else:
+            l = r
+        r+=1    
+        #     l+=1
+        # else:
+        #     l+=1
+        #     r+=1
+
+
+    return maxDiff

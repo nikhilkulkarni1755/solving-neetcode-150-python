@@ -1,0 +1,28 @@
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        # sort the array
+
+        # O(n log n)
+        nums = sorted(nums)
+
+        hashset = {}
+        for i in nums:
+            hashset[i] = i
+
+        # print(nums)
+
+        first = 0
+        # second = len(nums)/2
+        second = len(nums) - 1
+        result = []
+        while first < second:
+            if -1 * (nums[first] + nums[second]) in hashset:
+                triplet = []
+                triplet.append(nums[first])
+                triplet.append(nums[second])
+                triplet.append(-1*(nums[first] + nums[second]))
+                result.append(triplet)
+            first+=1
+            second-=1
+        return result
+
+
